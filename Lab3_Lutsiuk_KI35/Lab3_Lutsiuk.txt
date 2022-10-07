@@ -1,0 +1,34 @@
+Created Scanner with name: Xerox
+Taking information about Scanner
+
+Taking menu to the USER
+
+Scanner Cap is Open
+
+Taking information about Scanner
+
+Taking menu to the USER
+
+ Take in Paper into Scanner
+
+Taking information about Scanner
+
+Taking menu to the USER
+
+Scanner Cap is Closed
+
+Taking information about Scanner
+
+Taking menu to the USER
+
+Scanning Paper Content
+
+Taking information about Scanner
+
+Taking menu to the USER
+
+ Printing Paper Content 
+Hello World
+Taking information about Scanner
+
+Taking menu to the USER
