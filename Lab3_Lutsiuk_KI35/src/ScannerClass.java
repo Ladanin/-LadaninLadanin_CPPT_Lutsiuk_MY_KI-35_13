@@ -2,13 +2,16 @@ import java.awt.print.Paper;
 import java.io.*;
 import java.util.Scanner;
 
+/**Scanner Class for realisation Lab_3**/
 public class ScannerClass {
     private String ScannerName;
-    private boolean ScannerCapOpen = false;
-    private boolean ScannerPaperIn = false;
-    private String PaperContent = null;
-private File dataFile = new File("Lab3_Lutsiuk.txt");
-private PrintWriter fout = new PrintWriter(dataFile);
+/** Class for Cap in Scanner**/
+    private ScannerCapClass CapForYou = new ScannerCapClass();
+    /** Class for Paper in Scanner**/
+    private ScannerPaperClass PaperForYou = new ScannerPaperClass();
+    /**Items for Loging our program into TXT file**/
+    private File dataFile = new File("Lab3_Lutsiuk.txt");
+    private PrintWriter fout = new PrintWriter(dataFile);
 
 
     /** Constructor **/
@@ -30,51 +33,51 @@ private PrintWriter fout = new PrintWriter(dataFile);
     }
     /** Getter and Setter for Cap of Scanner **/
     public void  SetScannerCap(){
-     if(ScannerCapOpen) {
+     if( CapForYou.GetScannerCap()) {
          fout.write("\nScanner Cap is Closed\n");
-         ScannerCapOpen = false;
+         CapForYou.SetScannerCap(false);
      }
      else{
             fout.write("\nScanner Cap is Open\n");
-            ScannerCapOpen = true;
+           CapForYou.SetScannerCap(true);
         }
      }
     public boolean GetScannerCap(){
         fout.write("\nGets Cap is Open or Closed\n");
-      return this.ScannerCapOpen;
+      return this.CapForYou.GetScannerCap();
     }
     /** Getter and Setter for PaperIn **/
     public void  SetPaperIn() {
-        if (ScannerCapOpen) {
-            if (ScannerPaperIn) {
-                ScannerPaperIn = false;
+        if (CapForYou.GetScannerCap()) {
+            if ( PaperForYou.GetScannerPaperIn()) {
+                PaperForYou.SetScannerPaperIn(false);
                 fout.write("\n Take out Paper from Scanner \n");
             }
             else {
                 fout.write("\n Take in Paper into Scanner\n");
-                ScannerPaperIn = true;
+                PaperForYou.SetScannerPaperIn(true);
             }
             }
         else {System.out.println("\nOpen the Cap First to Put Paper\n");}
     }
     public boolean GetScannerPaper(){
         fout.write("\nGets Paper is in Scanner\n");
-        return this.ScannerPaperIn;
+        return this.PaperForYou.GetScannerPaperIn();
     }
 
 /** Method to show the Text on the Paper **/
     public void ShowPaperContent(){
-        if(PaperContent != null){
-            System.out.println(PaperContent);
+        if(PaperForYou.GetScannerPaperContent() != null){
+            System.out.println(PaperForYou.GetScannerPaperContent());
             fout.write("\n Printing Paper Content \n");
-            fout.write(PaperContent);
+            fout.write(PaperForYou.GetScannerPaperContent());
         }
         else{System.out.println("Paper is Clear, try to Scan the Paper.");}
     }
     /**     Method that Scan the Text on Paper **/
     public void ScanThePaper(String PaperContent){
-        if(ScannerPaperIn && !ScannerCapOpen ){
-          this.PaperContent = PaperContent;
+        if(PaperForYou.GetScannerPaperIn() && !CapForYou.GetScannerCap() ){
+          PaperForYou.SetScannerPaperContent(PaperContent);
             fout.write("\nScanning Paper Content\n");
         } else{
             System.out.println("\n\nCheck that Cap is Open or Paper is IN the scanner \n\n");
@@ -87,10 +90,10 @@ private PrintWriter fout = new PrintWriter(dataFile);
         System.out.println("Name of Scanner :");
         System.out.println(ScannerName);
         System.out.println("Cap is Open?");
-        if(ScannerCapOpen){ System.out.println("Yes"); }
+        if(CapForYou.GetScannerCap()){ System.out.println("Yes"); }
         else{ System.out.println("No");}
         System.out.println("Paper is In");
-        if(ScannerPaperIn){ System.out.println("Yes"); }
+        if(PaperForYou.GetScannerPaperIn()){ System.out.println("Yes"); }
         else{ System.out.println("No");}
         System.out.println("===================================");
         fout.write("\nTaking information about Scanner\n");
@@ -108,6 +111,7 @@ private PrintWriter fout = new PrintWriter(dataFile);
         fout.write("\nTaking menu to the USER\n");
 
     }
+    /**Method of ending program, taking down FILE**/
     public void ScannerEndOfProgram(){
         fout.flush();
         fout.close();
