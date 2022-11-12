@@ -52,18 +52,21 @@ public class CopyMachineClass extends ScannerClass implements ScannerMenuInterfa
     }
 
 
-    public void DoNextScannerMove() {
-        System.out.println("===================================");
-        System.out.println("Press the button equal to the Menu point:");
-        System.out.println("To Close or Open Scanner Cap Press: F");
-        System.out.println("To Put Paper in the Scanner Press: P");
-        System.out.println("To Scan Paper Press: S");
-        System.out.println("To Show Paper Content Press: D");
-        System.out.println("To Turn Off the program Press: X");
-        System.out.println("===================================");
-        fout.write("\nTaking menu to the USER\n");
+    public void DoNextScannerMove( int a) {
+//        System.out.println("===================================");
+//        System.out.println("Press the button equal to the Menu point:");
+//        System.out.println("To Close or Open Scanner Cap Press: F");
+//        System.out.println("To Put Paper in the Scanner Press: P");
+//        System.out.println("To Scan Paper Press: S");
+//        System.out.println("To Show Paper Content Press: D");
+//        System.out.println("To Turn Off the program Press: X");
+//        System.out.println("===================================");
+//        fout.write("\nTaking menu to the USER\n");
+        DoNextScannerMove();
+        System.out.println("Do Something #2");
 
     }
+
     @Override
     public void ScannerEndOfProgram() {
        fout.write("End of the Program");

@@ -1,7 +1,7 @@
 import java.io.File;
 import java.io.PrintWriter;
 /**Abstract Class from the Lab 3**/
-public abstract class ScannerClass {
+public abstract class ScannerClass implements ScannerMenuInterface {
     /**Two classes to describe the Paper and Cap**/
     private String ScannerName = null;
     private ScannerCapClass CapOfScanner = new ScannerCapClass();
@@ -52,4 +52,7 @@ public abstract class ScannerClass {
     public abstract void ScanThePaper(String PaperContent);
     public abstract void ShowPaperContent();
     public abstract void ScannerEndOfProgram();
+    public void DoNextScannerMove(){
+        System.out.println("Do Something #1");
+    }
 }

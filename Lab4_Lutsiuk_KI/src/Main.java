@@ -20,35 +20,36 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String informationofpaper;
         String navigator;
-        while (checkeready){
-            ScannerTest.ShowInfoAboutClass();
-
-            System.out.println("What do next?");
-            ScannerTest.DoNextScannerMove();
-            navigator = scanner.nextLine();
-            navigator = navigator.toUpperCase();
-
-            switch (navigator){
-                case("F"):
-                    ScannerTest.SetScannerCap();
-                    break;
-                case("S"):
-                    System.out.println("Write your text to the Paper:");
-                    informationofpaper = scanner.nextLine();
-                    ScannerTest.ScanThePaper(informationofpaper);
-                    break;
-                case("P"):
-                    ScannerTest.SetPaperIn();
-                    break;
-                case("D"):
-                    ScannerTest.ShowPaperContent();
-                    break;
-                case("X"):
-                    ScannerTest.ScannerEndOfProgram();
-                    checkeready = false;
-                    break;
-            }
-        }
+      ScannerTest.DoNextScannerMove();
+//        while (checkeready){
+//            ScannerTest.ShowInfoAboutClass();
+//
+//            System.out.println("What do next?");
+//            ScannerTest.DoNextScannerMove();
+//            navigator = scanner.nextLine();
+//            navigator = navigator.toUpperCase();
+//
+//            switch (navigator){
+//                case("F"):
+//                    ScannerTest.SetScannerCap();
+//                    break;
+//                case("S"):
+//                    System.out.println("Write your text to the Paper:");
+//                    informationofpaper = scanner.nextLine();
+//                    ScannerTest.ScanThePaper(informationofpaper);
+//                    break;
+//                case("P"):
+//                    ScannerTest.SetPaperIn();
+//                    break;
+//                case("D"):
+//                    ScannerTest.ShowPaperContent();
+//                    break;
+//                case("X"):
+//                    ScannerTest.ScannerEndOfProgram();
+//                    checkeready = false;
+//                    break;
+//            }
+//        }
 
 
 
